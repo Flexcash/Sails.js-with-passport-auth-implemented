@@ -1,0 +1,38 @@
+<!-- Default home page -->
+<link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
+<script type="text/javascript">
+  setTimeout(function sunrise() {
+    document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
+  }, 0);
+</script>
+
+<div class="default-page">
+  <div class="header">
+    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
+
+    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' + view.ext %></code></h3>
+  </div>
+  <div class="main container clearfix">
+
+    <div class="content">
+      <h1 id="main-title">Hi <%= user.name %>,</h1>
+
+      <p>You've successfully logged in.</p>
+      <a class="btn" href="/logout">Logout</a>
+
+      <h2>User Model</h2>
+      <table class="table">
+        <% for(key in user.toJSON() ) { if (user.hasOwnProperty(key)) { %>
+        <tr>
+          <td><%= key %>:</td>
+          <td class="boxy"><%= user[key] %></td>
+        </tr>
+        <% }} %>
+      </table>
+
+     
+    </div>
+  </div>
+</div>
+
+
